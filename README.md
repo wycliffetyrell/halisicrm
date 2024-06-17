@@ -50,6 +50,7 @@ flutter run
 ### Project Structure
 lib
 ├── components      # Reusable UI components
+|-- Utils           # Utilities in the application
 ├── database        # Hive database models and functions
 ├── pages           # Screens and pages of the application
 ├── main.dart       # Main entry point of the application
@@ -61,7 +62,6 @@ fl_chart: ^0.68.0
 hive: ^2.0.4
 hive_flutter: ^1.1.0
 path_provider: ^2.0.2
-shared_preferences: ^2.0.13
 cupertino_icons: ^1.0.6
 intl: ^0.19.0
 google_fonts: ^6.2.1
