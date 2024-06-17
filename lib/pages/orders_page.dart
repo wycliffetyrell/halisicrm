@@ -208,7 +208,7 @@ class _OrdersPageState extends State<OrdersPage> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  width: MediaQuery.of(context).size.width / 2,
+                  width: MediaQuery.of(context).size.width,
                   child: TextField(
                     controller: clientController,
                     decoration: InputDecoration(
@@ -246,7 +246,7 @@ class _OrdersPageState extends State<OrdersPage> {
                   Text('Selected Client: ${selectedCustomer!.name}'),
                 SizedBox(height: 16),
                 Container(
-                  width: MediaQuery.of(context).size.width / 2,
+                  width: MediaQuery.of(context).size.width,
                   child: ListView.builder(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
@@ -362,7 +362,7 @@ class _OrdersPageState extends State<OrdersPage> {
                 ),
                 SizedBox(height: 16),
                 Container(
-                  width: MediaQuery.of(context).size.width / 2,
+                  width: MediaQuery.of(context).size.width,
                   child: TextField(
                     controller: amountPaidController,
                     decoration: InputDecoration(

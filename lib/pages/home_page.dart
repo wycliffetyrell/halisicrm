@@ -54,24 +54,24 @@ class _HomePageState extends State<HomePage> {
   @override
   void dispose() {
     // Close Hive boxes and cancel the timer when no longer needed
-    _ordersBox.close();
-    _expensesBox.close();
-    _followUpsBox.close();
+    // _ordersBox.close();
+    // _expensesBox.close();
+    // _followUpsBox.close();
     _refreshTimer?.cancel();
     super.dispose();
   }
 
   // Function to calculate number of orders with status 0
   Future<int> calculateOrdersWithStatus0() async {
-    await _openBoxes(); // Ensure boxes are opened before accessing data
+    //  await _openBoxes(); // Ensure boxes are opened before accessing data
     return _ordersBox.values.where((order) => order.status == 0).length;
   }
 
   // Function to calculate total sales amount (orders with status 1)
   Future<double> calculateTotalSalesAmount() async {
-    await _openBoxes(); // Ensure boxes are opened before accessing data
+    //   await _openBoxes(); // Ensure boxes are opened before accessing data
     var orders =
-        await _ordersBox.values.toList(); // Convert to list to await the values
+    await _ordersBox.values.toList(); // Convert to list to await the values
 
     // Calculate total sales amount asynchronously
     double totalSales = orders
@@ -83,19 +83,19 @@ class _HomePageState extends State<HomePage> {
 
   // Function to calculate number of customer leads
   Future<int> calculateCustomerLeads() async {
-    await _openBoxes(); // Ensure boxes are opened before accessing data
+    //await _openBoxes(); // Ensure boxes are opened before accessing data
     return _followUpsBox.length;
   }
 
   // Function to calculate total expense amount
   Future<double> calculateTotalExpense() async {
-    await _openBoxes(); // Ensure boxes are opened before accessing data
+    //  await _openBoxes(); // Ensure boxes are opened before accessing data
     var expenses = await _expensesBox.values
         .toList(); // Convert to list to await the values
 
     // Calculate total expense amount asynchronously
     double totalExpense =
-        expenses.fold(0, (double sum, expense) => sum + expense.amount);
+    expenses.fold(0, (double sum, expense) => sum + expense.amount);
 
     return totalExpense;
   }
@@ -159,7 +159,7 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       GridView.count(
-                        crossAxisCount: 4,
+                        crossAxisCount: 2,
                         crossAxisSpacing: 16.0,
                         mainAxisSpacing: 16.0,
                         shrinkWrap: true,
@@ -180,7 +180,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           _buildCard(
                             context,
-                            title: 'Customer Leads',
+                            title: 'Follow',
                             futureValue: calculateCustomerLeads(),
                             color: Colors.orange,
                             routeName: '/follow-up',
@@ -214,12 +214,12 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _buildCard(
-    BuildContext context, {
-    required String title,
-    required Future<dynamic> futureValue,
-    required Color color,
-    required String routeName,
-  }) {
+      BuildContext context, {
+        required String title,
+        required Future<dynamic> futureValue,
+        required Color color,
+        required String routeName,
+      }) {
     return FutureBuilder(
       future: futureValue,
       builder: (context, AsyncSnapshot<dynamic> snapshot) {
@@ -411,3 +411,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+

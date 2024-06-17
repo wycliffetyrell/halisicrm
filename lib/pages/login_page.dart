@@ -42,7 +42,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   border: Border(
                     bottom: BorderSide(
                       color: Colors.blue,
-                      width: 2.0,
                     ),
                   ),
                 ),
@@ -69,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   children: [
                     FractionallySizedBox(
-                      widthFactor: 1 / 2, // Reduce width by 1/2
+
                       child: TextFormField(
                         controller: _emailController,
                         decoration: InputDecoration(
@@ -89,7 +88,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     SizedBox(height: 20),
                     FractionallySizedBox(
-                      widthFactor: 1 / 2, // Reduce width by 1/2
                       child: TextFormField(
                         controller: _passwordController,
                         decoration: InputDecoration(

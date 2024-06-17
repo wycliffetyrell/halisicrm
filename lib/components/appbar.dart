@@ -40,8 +40,9 @@ class MyAppBar extends StatelessWidget {
                   ),
                 ],
               ),
+
               Text(
-                'Welcome! Today is $formattedDate',
+                'Today is $formattedDate',
                 style: GoogleFonts.lato(
                     textStyle: const TextStyle(
                         fontFamily: 'RobotoMono',

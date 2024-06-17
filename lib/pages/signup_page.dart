@@ -83,7 +83,7 @@ class _SignupScreenState extends State<SignupScreen> {
           child: Form(
             key: _formKey,
             child: FractionallySizedBox(
-              widthFactor: 1 / 2, // Reduce width by 1/2
+
               child: ListView(
                 children: [
                   TextFormField(
